@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 命名空间mapper：com.model.professional -->
+<mapper namespace="com.dao.oracle.TCSL_DAO_Login">
+    <select id="queryNameByMcid" resultType="PHO_MC_O2O">
+        SELECT
+            MCID,
+            NAME,
+            MCPWD
+        FROM
+            pho_mc_o2o
+        WHERE
+            MCID = #{MCID}
+        AND MCPWD = #{MCPWD}
+    </select>
+    <update id="updateMc">
+        UPDATE pho_mc_o2o
+        SET NAME = #{NAME},
+         ORDERTEL = #{ORDERTEL},
+         ADDRESS = #{ADDRESS},
+         DESP = #{DESP}
+        WHERE
+            MCID = #{MCID}
+</update>
+    <select id="queryByMcid" resultType="PHO_MC_O2O">
+        SELECT
+            *
+        FROM
+            pho_mc_o2o
+        WHERE
+            MCID = #{MCID}
+    </select>
+</mapper>

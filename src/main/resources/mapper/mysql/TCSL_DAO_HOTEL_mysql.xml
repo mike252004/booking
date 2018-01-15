@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 命名空间mapper：com.model.professional -->
+<mapper namespace="com.dao.mysql.TCSL_DAO_Hotel_mysql">
+    <update id="updateHotelInfo" >
+        UPDATE ths_bsc_hotel
+        SET cCITY = #{CCITY},
+         dLONGTITUDE = #{dLONGTITUDE},
+         dLATITUDE = #{dLATITUDE}
+        WHERE
+            iMCID = #{MCID}
+        AND
+            iGCID = #{GCID}
+    </update>
+    <select id="queryHotelInfo" resultType="com.vo.TCSL_VO_Hotel">
+        SELECT
+            iMCID,
+            cCITY,
+            dLONGTITUDE,
+            dLATITUDE
+        FROM
+            ths_bsc_hotel
+        WHERE
+            iMCID = #{MCID}
+    </select>
+    <select id="queryAll" resultType="com.vo.TCSL_VO_Hotel">
+        SELECT
+            iMCID,
+            cCITY,
+            dLONGTITUDE,
+            dLATITUDE,
+            iGCID
+        FROM
+            ths_bsc_hotel
+    </select>
+    <insert id="addHotelInfo">
+        INSERT ths_bsc_hotel (
+            iMCID,
+            cCITY,
+            dLONGTITUDE,
+            dLATITUDE,
+            iGCID
+        )
+        VALUES
+            (
+                #{MCID},
+                #{CCITY},
+                #{dLONGTITUDE},
+                #{dLATITUDE},
+                #{GCID}
+            )
+    </insert>
+</mapper>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 命名空间mapper：com.model.professional -->
+<mapper namespace="com.dao.mysql.TCSL_DAO_Book_mysql">
+    <select id="queryRoomCount" resultType="com.vo.TCSL_VO_OrderFormInfo">
+        SELECT
+        CNAME,
+        icount COUNT
+        FROM
+        PHO_HT_ROOMTYPE
+        WHERE
+        <![CDATA[
+            croomtypeid =#{ROOMTYPEID}
+            AND mcid = #{MCID}
+            AND cstrdate >= #{STARTDATE}
+            AND cenddate <= #{ENDDATE}
+        ]]>
+    </select>
+    <select id="queryPrice" resultType="java.math.BigDecimal">
+        SELECT
+        MPRICE
+        FROM
+        PHO_HT_ROOMTYPE
+        WHERE
+        <![CDATA[
+            croomtypeid =#{ROOMTYPEID}
+            AND mcid = #{MCID}
+            AND cstrdate >= #{STARTDATE}
+            AND cenddate <= #{ENDDATE}
+        ]]>
+    </select>
+</mapper>

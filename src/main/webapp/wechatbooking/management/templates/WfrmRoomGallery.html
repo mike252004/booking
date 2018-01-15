@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="description" content="房型图片管理-相册">
+	    <meta name="keywords" content="index">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, 			maximum-scale=1,user-scalable=no">
+	    <meta name="renderer" content="webkit">
+	    <meta http-equiv="Cache-Control" content="no-siteapp" />
+	    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+	    <link rel="icon" type="image/png" href="../api/AmazeUI/i/favicon.png">
+	    <link rel="apple-touch-icon-precomposed" href="../api/AmazeUI/i/app-icon72x72@2x.png">
+	    <link rel="stylesheet" href="../api/AmazeUI/css/amazeui.min.css" />
+	    <link rel="stylesheet" href="../api/AmazeUI/css/admin.css">
+	    <link rel="stylesheet" type="text/css" href="../api/webuploader/webuploader.css" />
+	    <script src="../api/jQuery/jquery.min.js"></script>
+	    <script src="../js/WfrmRoomGallery.js"></script>
+	    <script src="../js/common.js"></script>
+	    <script src="../js/resource.js"></script>
+	    <!--[if lt IE 9]>
+		<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+		<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+		<script src="assets/js/polyfill/rem.min.js"></script>
+		<script src="assets/js/polyfill/respond.min.js"></script>
+		<script src="assets/js/amazeui.legacy.js"></script>
+		<![endif]-->
+        <!--[if (gte IE 9)|!(IE)]><!-->
+        <script src="../api/AmazeUI/js/jquery.min.js"></script>
+        <script src="../api/AmazeUI/js/amazeui.min.js"></script>
+        <!--<![endif]-->
+        <script src="../api/AmazeUI/js/app.js"></script>
+	</head>
+	<body>
+		<div class="am-cf am-padding">
+            <div class="am-fl am-cf">
+                <strong class="am-text-primary am-text-lg">相册</strong> / <small>Gallery</small>
+            </div>
+        </div>
+        <ul class="am-avg-sm-2 am-avg-md-4 am-avg-lg-6 am-margin gallery-list" id="imgList">
+            
+        </ul>
+        
+        <br />  <br />  <br />  <br />  <br />  <br />  <br />  <br />  <br />  <br />  <br />  <br />
+        
+        <div class="am-modal am-modal-confirm" tabindex="-1" id="my-confirm">
+	  		<div class="am-modal-dialog">
+	    		<div class="am-modal-hd">
+	    			微信预订后台管理系统
+	    		</div>
+	    		<div class="am-modal-bd">
+	      			您，确定要删除这张照片吗？
+	    		</div>
+	    		<div class="am-modal-footer">
+	      			<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+	      			<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+	    		</div>
+	  		</div>
+  		</div>
+	</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <title>酒店详情|酒店设施</title>
+	    <meta name="description" content="酒店详情|酒店设施">
+	    <meta name="keywords" content="index">
+	    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	    <meta name="renderer" content="webkit">
+	    <meta http-equiv="Cache-Control" content="no-siteapp" />
+	    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+	    <link rel="icon" type="image/png" href="../api/AmazeUI/i/favicon.png">
+	    <link rel="apple-touch-icon-precomposed" href="../api/AmazeUI/i/app-icon72x72@2x.png">
+	    <link rel="stylesheet" href="../api/AmazeUI/css/amazeui.min.css" />
+	    <link rel="stylesheet" href="../api/AmazeUI/css/admin.css">
+	    <link rel="stylesheet" type="text/css" href="../api/webuploader/webuploader.css" />
+	    <script src="../api/jQuery/jquery.min.js"></script>
+	    <script src="../api/Echart/dist/echarts.js"></script>	    
+	    <script src="../js/WfrmHotelFacility.js"></script>
+	    <script src="../js/common.js"></script>
+	    <script src="../js/resource.js"></script>
+	    <!--[if lt IE 9]>
+	    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+	    <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+	    <script src="assets/js/polyfill/rem.min.js"></script>
+	    <script src="assets/js/polyfill/respond.min.js"></script>
+	    <script src="assets/js/amazeui.legacy.js"></script>
+	    <![endif]-->
+	    <!--[if (gte IE 9)|!(IE)]><!-->
+	    <script src="../api/AmazeUI/js/jquery.min.js"></script>
+	    <script src="../api/AmazeUI/js/amazeui.min.js"></script>
+	    <!--<![endif]-->
+	    <script src="../api/AmazeUI/js/app.js"></script>
+	</head>
+	<body>
+		<header data-am-widget="header" class="am-header am-header-default">
+		  	<h1 class="am-header-title">
+			    <span id="hotel_name"></span>
+		  	</h1>	
+		</header>
+	    <div class="am-panel am-panel-default">
+	        <div class="am-panel-bd" id="hotel_desp">
+	            
+	        </div>
+	    </div>
+    	<section data-am-widget="accordion" class="am-accordion am-accordion-gapped" data-am-accordion='{  }'>
+	  		<dl class="am-accordion-item am-active">
+			    <dt class="am-accordion-title">客房设施</dt>
+			    <dd class="am-accordion-bd am-collapse am-in">
+			      <!-- 规避 Collapase 处理有 padding 的折叠内容计算 计算有误的问题, 加一个容器 -->
+			      <div class="am-accordion-content" id="room_menu">
+			      	
+			      </div>
+			    </dd>
+	  		</dl>
+			<dl class="am-accordion-item">
+    			<dt class="am-accordion-title">综合设施</dt>
+    			<dd class="am-accordion-bd am-collapse ">
+		    	    <!-- 规避 Collapase 处理有 padding 的折叠内容计算 计算有误的问题, 加一个容器 -->
+		 			<div class="am-accordion-content" id="multiple_menu">
+		 				
+		 			</div>
+   				</dd>
+ 			</dl>
+	 		<dl class="am-accordion-item">
+	   			<dt class="am-accordion-title">服务项目</dt>
+	   			<dd class="am-accordion-bd am-collapse ">
+		     		<!-- 规避 Collapase 处理有 padding 的折叠内容计算 计算有误的问题, 加一个容器 -->
+		     		<div class="am-accordion-content" id="server_menu">
+		     		</div>
+		   		</dd>
+	 		</dl>
+ 			<dl class="am-accordion-item">
+	   			<dt class="am-accordion-title">娱乐设施</dt>
+	   			<dd class="am-accordion-bd am-collapse ">
+	     		<!-- 规避 Collapase 处理有 padding 的折叠内容计算 计算有误的问题, 加一个容器 -->
+		     		<div class="am-accordion-content" id="entertainment_menu">
+		     		</div>
+	 			</dl>
+		</section>
+   		<br />
+	</body>
+</html>
