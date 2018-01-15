@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<!-- 命名空间mapper：com.model.professional -->
-<mapper namespace="com.dao.oracle.TCSL_DAO_MC_orl">
-    <select id="queryByMcId" resultType="com.po.oracle.PHO_MC_O2O">
-        select * from PHO_MC_O2O WHERE MCID = #{MCID}
-    </select>
-</mapper>
