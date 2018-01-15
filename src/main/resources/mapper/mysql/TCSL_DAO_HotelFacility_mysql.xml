@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 命名空间mapper：com.model.professional -->
+<mapper namespace="com.dao.mysql.TCSL_DAO_HotelFacility_mysql">
+    <select id="queryRoomFacility" resultType="com.po.oracle.PHO_HT_HOTELITEM">
+        SELECT
+            *
+        FROM
+            PHO_HT_HOTELITEM
+        WHERE
+            MCID = #{MCID}
+        AND ITEnCLASS = #{CLASS}
+    </select>
+</mapper>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="首页">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="icon" type="image/png" href="../api/AmazeUI/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="../api/AmazeUI/i/app-icon72x72@2x.png">
+    <link rel="stylesheet" href="../api/AmazeUI/css/amazeui.min.css" />
+    <link rel="stylesheet" href="../api/AmazeUI/css/admin.css">
+    <link rel="stylesheet" type="text/css" href="../api/webuploader/webuploader.css" />
+    <script src="../api/jQuery/jquery.min.js"></script>
+    <script src="../api/Echart/dist/echarts.js"></script>
+    <script src="../js/WfrmHomePage.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/resource.js"></script>
+    <!--[if lt IE 9]>
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+    <script src="assets/js/polyfill/rem.min.js"></script>
+    <script src="assets/js/polyfill/respond.min.js"></script>
+    <script src="assets/js/amazeui.legacy.js"></script>
+    <![endif]-->
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="../api/AmazeUI/js/jquery.min.js"></script>
+    <script src="../api/AmazeUI/js/amazeui.min.js"></script>
+    <!--<![endif]-->
+    <script src="../api/AmazeUI/js/app.js"></script>
+</head>
+	<body>
+		<div class="am-cf am-padding">
+            <div class="am-fl am-cf">
+                <strong class="am-text-primary am-text-lg">首页</strong> / 
+                <small>一些常用模块</small>
+            </div>
+        </div>
+        <ul class="am-avg-sm-1 am-avg-md-3 am-margin am-padding am-text-center admin-content-list ">
+            <li>
+            	<a style="cursor: pointer;" class="am-text-warning">
+            		<span class="am-icon-btn am-icon-briefcase"></span>
+                	<br />
+					完成订单
+					<br />
+                	<span id="finishOrderCount"></span>
+            	</a>
+            </li>
+            <li>
+            	<a style="cursor: pointer;" class="am-text-danger">
+                	<span class="am-icon-btn am-icon-recycle"></span>
+                    <br />
+					 预订订单
+					 <br />
+                    <span id="allOrderCount"></span>
+            	</a>
+            </li>
+            <li>
+            	<a class="am-text-secondary">
+            		<span class="am-icon-btn am-icon-user-md"></span>
+                    <br />
+					取消订单
+					<br />
+                    <span id="cancelOrderCount"></span>
+            	</a>
+            </li>
+        </ul>
+        <div class="am-g">
+            <div class="am-u-sm-12">
+                <div class="am-panel am-panel-default">
+                    <div class="am-panel-hd">
+                    	历史数据
+                    </div>
+                    <div class="am-panel-bd">
+                        <div class="am-g">
+                            <div class="am-u-sm-12">
+                                <div id="historyInfo" style="height: 400px">
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="am-g">
+            <div class="am-u-sm-12">
+                <div class="am-g">
+                    <div class="am-u-sm-12">
+                        <div class="am-tabs" data-am-tabs="">
+                            <ul class="am-tabs-nav am-nav am-nav-tabs">
+                                <li class="am-active">
+                                	<a href="#tab2-1">
+                                		今日抵店
+                                	</a>
+                                </li>
+                                <li class="">
+                                	<a href="/react">
+                                		新增订单
+                                    	<span class="am-badge am-badge-danger">NEW</span>
+                                	</a>
+                                </li>
+                            </ul>
+                            <div class="am-tabs-bd">
+                                <div class="am-tab-panel am-fade am-active am-in" id="tab2-1">
+                                    <table class="am-table am-table-bd am-table-striped 												admin-content-table ">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    	预订房型
+                                                </th>
+                                                <th>
+                                                    	客户姓名
+                                                </th>
+                                                <th>
+                                                    	预订价格
+                                                </th>
+                                                <th>
+                                                    	联系电话
+                                                </th>
+                                                <th>
+                                                    	订单状态
+                                                </th>
+                                                <th>
+                                                    	预订时间
+                                                </th>
+                                                <th>
+                                                    	到店/离店
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="todayOrderList">
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="am-tab-panel am-fade" id="tab2-2">
+                                    <table class="am-table am-table-bd am-table-striped 												admin-content-table ">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    	预订房型
+                                                </th>
+                                                <th>
+                                                   		 客户姓名
+                                                </th>
+                                                <th>
+                                                    	预订价格
+                                                </th>
+                                                <th>
+                                                   		 联系电话
+                                                </th>
+                                                <th>
+                                                    	订单状态
+                                                </th>
+                                                <th>
+                                                    	预订时间
+                                                </th>
+                                                <th>
+                                                    	到店/离店
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="newOrderList">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+                <br />
+            </div>
+            <!-- content end -->
+        </div>
+	</body>
+</html>

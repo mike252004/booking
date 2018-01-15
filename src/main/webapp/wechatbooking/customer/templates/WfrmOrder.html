@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>酒店列表</title>
+    <meta name="description" content="预订">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="icon" type="image/png" href="../api/AmazeUI/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="../api/AmazeUI/i/app-icon72x72@2x.png">
+    <link rel="stylesheet" href="../api/AmazeUI/css/amazeui.min.css" />
+    <link rel="stylesheet" href="../api/AmazeUI/css/admin.css">
+    <link rel="stylesheet" type="text/css" href="../api/css/cityPicker.css">
+    <script type="text/javascript" 			src="http://api.map.baidu.com/api?v=2.0&ak=kpc15j1AQFyUVq5743wbnFDMpkjvlUBG">
+	</script>
+    <script src="../api/jQuery/jquery.min.js"></script>
+    <script src="../js/WfrmOrder.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/resource.js"></script>
+    <!--[if lt IE 9]>
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+    <script src="assets/js/polyfill/rem.min.js"></script>
+    <script src="assets/js/polyfill/respond.min.js"></script>
+    <script src="assets/js/amazeui.legacy.js"></script>
+    <![endif]-->
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    <script src="../api/AmazeUI/js/jquery.min.js"></script>
+    <script src="../api/AmazeUI/js/amazeui.min.js"></script>
+    <!--<![endif]-->
+    <script src="../api/AmazeUI/js/app.js"></script>
+    <script src="../api/cityPicker/cityPicker.js"></script>
+    <style>
+    	.search{
+    		background-color: #4FBFFF;
+    		text-align: center;
+    		height: 57px;
+    		padding-top: 5px;
+    	}
+    	.search .box{
+    		height: 46px;
+    		width: 80%;
+    		border-radius:30px;
+    		background-color: white;
+    		line-height: 46px;
+    		margin: auto;
+    	}
+    	.search .box input{
+    		width: 70%;
+    		height: 2.5em;
+    		line-height: 2.5em;
+    		border: 0px;
+    		outline:none; /*选中时去掉边框*/
+    	}
+    	.search .box .icon{
+    		background-image: url(../images/search.png);
+    		float: left;
+    		height: 32px;
+    		width: 32px;
+    		margin:8px 0px 0px 8px;
+    	}
+    	.change{
+    		color: white;
+    		background-color: #0E90D2;
+    		height: 36px;
+    		line-height: 36px;
+    		border: 0px;
+    		padding-left: 36%;
+    		width: 100%;
+    		margin-left: -20%;
+    		text-align: center;
+    	}
+    </style>
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，微信预订 暂不支持。 请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+    以获得更好的体验！</p>
+<![endif]-->
+<header data-am-widget="header" class="am-header am-header-default">
+    <div class="am-header-left am-header-nav">
+        <a href="#left-link" class="">
+            <i class="am-header-icon am-icon-home"></i>
+        </a>
+    </div>
+    <!-- 城市选择 -->
+    <input type="text" class="change city" id="selectPosition" readonly="true"/>
+    <div class="am-header-right am-header-nav">
+        <a href="#right-link" class="">
+            <i class="am-header-icon am-icon-bars"></i>
+        </a>
+    </div>
+    <!-- 地图容器 -->
+    <span id="allmap" style="display: none;"></span>
+</header>
+<!-- 酒店查询框 -->
+<div class="search">
+	<div class="box">
+		<div class="icon"></div>
+		<input type="text" placeholder="酒店名、街道" id="searchBox"/>
+	</div>
+</div>
+<!-- 酒店详情列表 -->
+<div data-am-widget="list_news" class="am-list-news am-list-news-default">
+    <div class="am-list-news-bd">
+        <ul class="am-list" id="hotel_list">
+
+        </ul>
+    </div>
+</div>
+</body>
+</html>

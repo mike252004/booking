@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 命名空间mapper：com.model.professional -->
+<mapper namespace="com.dao.oracle.PHO_MC_O2O_DAO">
+    <select id="queryAll" resultType="com.po.oracle.PHO_MC_O2O">
+        select * from PHO_MC_O2O
+    </select>
+</mapper>

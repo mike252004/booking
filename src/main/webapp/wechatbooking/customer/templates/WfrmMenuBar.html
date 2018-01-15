@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <title></title>
+	    <meta name="description" content="菜单选择">
+	    <meta name="keywords" content="index">
+	    <!--<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">-->
+	    <meta name="renderer" content="webkit">
+	    <meta http-equiv="Cache-Control" content="no-siteapp" />
+	    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+	    <link rel="icon" type="image/png" href="../api/AmazeUI/i/favicon.png">
+	    <link rel="apple-touch-icon-precomposed" href="../api/AmazeUI/i/app-icon72x72@2x.png">
+	    <link rel="stylesheet" href="../api/AmazeUI/css/amazeui.min.css" />
+	    <link rel="stylesheet" href="../api/AmazeUI/css/admin.css">
+	    <!--<link rel="stylesheet" type="text/css" href="../api/pickerDateRange/dateRange.css"/>-->
+	    <script src="../api/jQuery/jquery.min.js"></script>
+	    <script src="../js/WfrmMenuBar.js"></script>
+	    <script src="../js/common.js"></script>
+		<script src="../js/resource.js"></script>
+        <!--<script type="text/javascript" src="../api/pickerDateRange/dateRange.js"></script>-->
+	    <!--[if lt IE 9]>
+	    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+	    <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+	    <script src="assets/js/polyfill/rem.min.js"></script>
+	    <script src="assets/js/polyfill/respond.min.js"></script>
+	    <script src="assets/js/amazeui.legacy.js"></script>
+	    <![endif]-->
+	    <!--[if (gte IE 9)|!(IE)]><!-->
+	    <script src="../api/AmazeUI/js/jquery.min.js"></script>
+	    <script src="../api/AmazeUI/js/amazeui.min.js"></script>
+	    <!--<![endif]-->
+	    <script src="../api/AmazeUI/js/app.js"></script>
+	    <style>
+	    
+	        body,html,header,section,div,ul,li,div,a,p,h1{ padding:0; margin:0; font-family:"微软雅黑"}
+	        li{ list-style:none;}
+	        a{ text-decoration:none;}
+	        .section{ overflow: hidden  }
+	        .section .left{ margin-left: 5%;}
+	        .section .left li{ float: left; margin-right: 20px; margin-top: 5%;transition: 0.8s;height: 410px;width:280px;}
+	
+	        .s5{ background: url("../images/menuBar_background.jpg") center; perspective: 10px } 
+	        .s5 .left li{ -webkit-transform: translate3d(-1000px,-800px,-500px) rotateX(145deg); transform: translate3d(-1000px,-800px,-500px) rotateX(145deg) }
+	        .s5.active .left li:nth-child(1){ -webkit-transform: translate3d(0,0,0) rotateX(0deg); transform: translate3d(0,0,0) rotateX(0deg); transition-delay: 0.8s;background:url("../images/book.png") center;background-position:-4px 440px; }
+	        .s5.active .left li:nth-child(2){ -webkit-transform: translate3d(0,0,0) rotateX(0deg); transform: translate3d(0,0,0) rotateX(0deg); transition-delay: 1s ;background:url("../images/coupon.png") center;background-position:-4px 440px;}
+	        .s5.active .left li:nth-child(3){ -webkit-transform: translate3d(0,0,0) rotateX(0deg); transform: translate3d(0,0,0) rotateX(0deg); transition-delay: 1.2s ;background:url("../images/order.png") center;background-position:-4px 440px;}
+			.topPanel{
+				margin: 0px;
+				padding: 0px;
+				height: 840px;
+				background:url("../images/hotel1.jpg") no-repeat;
+				background-size:100%;
+			}
+			.menu_name{
+				font-size: 3em;
+				font-weight: 800;
+				text-align: center;
+				margin-top: 280px;
+				color: white;
+			}
+			.tel{
+				font-size: 2em;
+				position: relative;
+				bottom: -120px;
+				text-align: center;
+			}
+			.topPanel .menu_mine{
+				margin-left: 45px;
+				margin-top: 30px;
+				float: left;
+				font-size: 3em;
+				color: white;
+				font-weight: 500;
+			}	
+			.topPanel .menu_near{
+				margin-right: 45px;
+				margin-top: 30px;
+				float: right;
+				font-size: 3em;
+				color: white;
+				font-weight: 500;
+			}
+    	</style>
+	</head>
+	<body>
+		<!--<div>
+            <div class='calendar_dates'> 
+                <div class="ta_date" id="div_date1">
+                    <span id="date1" style="color:#4169E1;font-weight: 500;"></span>
+                </div>
+                <div id="datePicker1"></div>
+            </div>
+        </div>-->
+        <div class="con">
+	        <div class="section s5">
+	        	<!-- top -->
+	        	<div class="am-u-sm-12" style="margin: 0px;padding:0px">
+        			<div class="topPanel">
+        				<div class="menu_mine" onclick="onclick_order()">
+        					<img src="../images/menu_mine.png" width="70px" style="margin-top:-10px"/>
+        					<span style="margin-left:-12px;">我的</span>
+        				</div>
+        				<div class="menu_near" onclick="onclick_mapBook()">
+        					<img src="../images/menu_near.png" width="70px" style="margin-top:-10px"/>
+        					<span style="margin-left:-12px;">附近</span>
+        				</div>
+        			</div>
+	        	</div>
+	        	<!-- menu -->
+	            <div class="left am-avg-sm-2 am-avg-md-3 am-avg-lg-4">
+	                <ul >
+	                    <li onclick="onclick_wcBook()">
+	                        <div class="menu_name">酒店预订</div>
+	                    </li>
+	                    <li onclick="onclick_mapBook()">
+	                        <div class="menu_name">地图预订</div>
+	                    </li>
+	                    <li onclick="onclick_order()">
+	                        <div class="menu_name">订单</div>
+	                    </li>
+	                </ul>
+	            </div>
+	            <!--&lt;!&ndash; bottom &ndash;&gt;-->
+	            <!--<div class="tel">-->
+	            	<!--<span>天财商龙大酒店</span> | -->
+	            	<!--<a>15900345728</a>-->
+	            <!--</div>-->
+	        </div>
+    	</div>
+    	<script src="../api/jQuery/jquery.fullPage.min.js"></script> 
+	</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    	<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <title>订单状态</title>
+	    <meta name="description" content="订单状态">
+	    <meta name="keywords" content="index">
+	    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	    <meta name="renderer" content="webkit">
+	    <meta http-equiv="Cache-Control" content="no-siteapp" />
+	    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+	    <link rel="icon" type="image/png" href="../api/AmazeUI/i/favicon.png">
+	    <link rel="apple-touch-icon-precomposed" href="../api/AmazeUI/i/app-icon72x72@2x.png">
+	    <link rel="stylesheet" href="../api/AmazeUI/css/amazeui.min.css" />
+	    <link rel="stylesheet" href="../api/AmazeUI/css/admin.css">
+	    <link rel="stylesheet" type="text/css" href="../api/webuploader/webuploader.css" />
+	    <script src="../api/jQuery/jquery.min.js"></script>
+	    <script src="../api/Echart/dist/echarts.js"></script>	    
+	    <script src="../js/WfrmBookStatus.js"></script>
+	    <script src="../js/common.js"></script>
+	    <script src="../js/resource.js"></script>
+	    <!--[if lt IE 9]>
+	    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+	    <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+	    <script src="assets/js/polyfill/rem.min.js"></script>
+	    <script src="assets/js/polyfill/respond.min.js"></script>
+	    <script src="assets/js/amazeui.legacy.js"></script>
+	    <![endif]-->
+	    <!--[if (gte IE 9)|!(IE)]><!-->
+	    <script src="../api/AmazeUI/js/jquery.min.js"></script>
+	    <script src="../api/AmazeUI/js/amazeui.min.js"></script>
+	    <!--<![endif]-->
+	    <script src="../api/AmazeUI/js/app.js"></script>
+	    
+</head>
+<body>
+	<header data-am-widget="header" class="am-header am-header-default">
+		<h1 class="am-header-title">
+			<a href="#title-link" class="">订单完成</a>
+		</h1>
+	</header>
+	<br />
+	<div class="am-panel am-panel-default">
+		<div class="am-panel-bd">
+			<div class="am-intro-hd am-text-center">
+				<h2 class="am-intro-title" id="order_flag">
+
+                </h2>
+				<br />
+				<table class="am-table  am-table-radius ">
+					<tr>
+						<td>
+							订单号：
+						</td>
+						<td id="order_id">
+
+						</td>
+					</tr>
+					<tr>
+						<td>
+							支付方式：
+						</td>
+						<td id="pay_type">
+
+						</td>
+					</tr>
+					<tr>
+						<td>
+							交易金额：
+						</td>
+						<td id="order_price">
+
+						</td>
+					</tr>
+					<tr>
+						<td>
+							门店名：
+						</td>
+						<td id="shop_name">
+
+						</td>
+					</tr>
+					<tr>
+						<td>
+							客服电话：
+						</td>
+						<td id="shop_tel">
+
+						</td>
+					</tr>
+					<tr>
+						<td>
+							地址：
+						</td>
+						<td id="shop_address">
+
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
