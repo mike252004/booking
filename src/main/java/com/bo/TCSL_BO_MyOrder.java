@@ -168,14 +168,23 @@ public class TCSL_BO_MyOrder {
         String url = null;
         try {
             String payKeyUrl = tcslUtilCommon.getPropertyParam("weChat.properties","weChat.getPayKeyUrl");
-            url = payKeyUrl + "?" +param;
+//            url = payKeyUrl + "?" +param;
+            url = payKeyUrl;
         } catch (Exception e) {
             e.printStackTrace();
         }
-        JSONObject requestResult = tcslUtilCommon.httpsRequest(url,"GET",null,headJson);
-        String key = requestResult.getString("key");
-        result.setRet(0);
-        result.setContent(key);
+//        JSONObject requestResult = tcslUtilCommon.httpsRequest(url,"GET",null,headJson);
+        JSONObject requestResult = tcslUtilCommon.httpsRequest(url,"POST",param,headJson);
+        if(requestResult.getString("returnCode").equals("-1")){
+            result.setContent(requestResult.getString("errorText"));
+            result.setRet(-1);
+        }else {
+            String key = requestResult.getString("key");
+            result.setContent(key);
+            result.setRet(0);
+        }
+
+
         return result;
     }
     /**

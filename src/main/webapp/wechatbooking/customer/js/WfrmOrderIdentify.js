@@ -249,6 +249,8 @@ function getPayKey(parentOpenId,payTypeId) {
                 var envType = RESOURCE_PAY_TYPE; // 1 测试 2预发布 3正式
                 var path =  RESOURCE_PAY_PAGE + "?" +"key="+key+"&envType=" + envType;
                 payOrder(path);
+            }else{
+                alert(data.content);
             }
         },
         error: function (XMLHttpReuqest, textStautus, errothrown) {
